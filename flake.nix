@@ -22,8 +22,10 @@
           };
         in
         self;
-      overlay = pkgs: prev: (builder {
-        inherit pkgs replugged-src;
+      overlay = final: prev: (builder {
+        inherit replugged-src;
+        pkgs = final;
+        overlayFinal = final;
       });
       packages = forAllSystems (system:
         let
