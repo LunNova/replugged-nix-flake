@@ -1,5 +1,7 @@
 # replugged-nix-flake
-An overlay to easily install Discord with [replugged](https://replugged.dev)
+A flake with derivations for [replugged](https://replugged.dev) and discord-canary with replugged set up.
+
+Based on [LavaDesu's powercord-overlay](https://github.com/LavaDesu/powercord-overlay).
 
 ## Installation
 ### With flakes
@@ -8,6 +10,7 @@ An overlay to easily install Discord with [replugged](https://replugged.dev)
 {
   inputs.replugged-nix-flake.url = "github:LunNova/replugged-nix-flake";
 }
+# TODO: explain how to get this available in other files using specialArgs? Or find somewhere to link
 ```
 
 ### Without flakes
