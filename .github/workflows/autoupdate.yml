@@ -15,7 +15,7 @@ jobs:
         id: check
         run: |
           local=$(cat flake.lock | jq ".nodes.powercord.locked.rev")
-          remote=$(curl "https://api.github.com/repos/powercord-org/powercord/commits?per_page=1" | jq ".[0].sha")
+          remote=$(curl "https://api.github.com/repos/replugged-org/replugged/commits?per_page=1" | jq ".[0].sha")
           if [[ $local == $remote ]]; then
             echo "::set-output name=skip::1"
           else

@@ -2,11 +2,11 @@
   "nodes": {
     "nixpkgs": {
       "locked": {
-        "lastModified": 1658737577,
-        "narHash": "sha256-xosJ5nJT9HX+b6UWsSX6R+ap4AdZOCrl/r+IKFp2ASQ=",
+        "lastModified": 1659803779,
+        "narHash": "sha256-+5zkHlbcbFyN5f3buO1RAZ9pH1wXLxCesUJ0vFmLr9Y=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "5a0e0d73b944157328d54c4ded1cf2f0146a86a5",
+        "rev": "f44884060cb94240efbe55620f38a8ec8d9af601",
         "type": "github"
       },
       "original": {
@@ -16,26 +16,26 @@
         "type": "github"
       }
     },
-    "powercord": {
+    "replugged": {
       "flake": false,
       "locked": {
-        "lastModified": 1658712501,
-        "narHash": "sha256-oApii3bNoJAmCDtELoo98XfDk4qHqjMRQJcIto2qbso=",
-        "owner": "powercord-org",
-        "repo": "powercord",
-        "rev": "bb30f25898f0ad3cae91fb43cc83b12247056e8e",
+        "lastModified": 1659832205,
+        "narHash": "sha256-88CSboEqT4OcgJzcIHFlhz66/RhQut//PjdjUtZSfi0=",
+        "owner": "replugged-org",
+        "repo": "replugged",
+        "rev": "f93f247ea4b55c12bdf7a4af71ef2e3b0ac8023e",
         "type": "github"
       },
       "original": {
-        "owner": "powercord-org",
-        "repo": "powercord",
+        "owner": "replugged-org",
+        "repo": "replugged",
         "type": "github"
       }
     },
     "root": {
       "inputs": {
         "nixpkgs": "nixpkgs",
-        "powercord": "powercord"
+        "replugged": "replugged"
       }
     }
   },

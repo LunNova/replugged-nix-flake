@@ -1,23 +1,28 @@
 {
-  description = "A nix overlay to install Discord Canary with Powercord";
+  description = "A Nix flake with packages for Replugged, the successor to Powercord. Based on github.com/LavaDesu's overlay for powercord.";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    powercord.url = "github:powercord-org/powercord";
-    powercord.flake = false;
+    replugged.url = "github:replugged-org/replugged";
+    replugged.flake = false;
   };
 
   outputs = { self, nixpkgs, ... } @ inputs:
   let
-    system = "x86_64-linux";
-    overlay = import ./overlay.nix inputs;
-    pkgs = import nixpkgs {
+    replugged-src = inputs.replugged;
+    builder = import ./builder.nix;
+    forAllSystems = nixpkgs.lib.genAttrs nixpkgs.lib.systems.flakeExposed;
+  in {
+    lib = let self = {
+      makeDiscordPluggedPackageSet = builder-args: builder { inherit replugged-src; } // builder-args;
+      makeDiscordPlugged = args: (self.makeDiscordPluggedPackageSet args).discord-plugged;
+    }; in self;
+    overlay = pkgs: prev: (builder {
+      inherit pkgs replugged-src;
+    });
+    packages = forAllSystems (system: let pkgs = import nixpkgs {
       inherit system;
       config.allowUnfree = true;
-      overlays = [ overlay ];
-    };
-  in {
-    inherit overlay;
-    packages.${system} = { inherit (pkgs) powercord-unwrapped powercord discord-plugged; };
+    }; in builder { inherit pkgs replugged-src; });
   };
 }

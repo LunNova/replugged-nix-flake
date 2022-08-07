@@ -7,8 +7,8 @@ TMPFOLDER=$(mktemp -d)
 
 echo "using $TMPFOLDER"
 cd $TMPFOLDER
-git clone https://github.com/powercord-org/powercord
-cd powercord
+git clone https://github.com/replugged-org/replugged
+cd replugged
 
 npm install --package-lock-only
 yarn import
