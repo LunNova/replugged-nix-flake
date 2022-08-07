@@ -7,7 +7,7 @@ index 0cd00cd..657396c 100644
  const { findInReactTree, forceUpdateElement } = require('powercord/util');
  const { Plugin } = require('powercord/entities');
 -const { SpecialChannels: { CSS_SNIPPETS, STORE_PLUGINS, STORE_THEMES }, WEBSITE } = require('powercord/constants');
-+const { SETTINGS_FOLDER, SpecialChannels: { CSS_SNIPPETS, STORE_PLUGINS, STORE_THEMES } } = require('powercord/constants');
++const { SETTINGS_FOLDER, SpecialChannels: { CSS_SNIPPETS, STORE_PLUGINS, STORE_THEMES }, WEBSITE } = require('powercord/constants');
  const { join } = require('path');
  const commands = require('./commands');
  const deeplinks = require('./deeplinks');
