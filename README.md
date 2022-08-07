@@ -1,4 +1,4 @@
-# replugged-overlay
+# replugged-nix-flake
 An overlay to easily install Discord with [replugged](https://replugged.dev)
 
 ## Installation
