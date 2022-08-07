@@ -17,7 +17,7 @@
       lib =
         let
           self = {
-            makeDiscordPluggedPackageSet = builder-args: builder { inherit replugged-src; } // builder-args;
+            makeDiscordPluggedPackageSet = builder-args: builder ({ inherit replugged-src; } // builder-args);
             makeDiscordPlugged = args: (self.makeDiscordPluggedPackageSet args).discord-plugged;
           };
         in
