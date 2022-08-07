@@ -2,7 +2,7 @@ diff --git a/src/Powercord/plugins/pc-moduleManager/index.js b/src/Powercord/plu
 index 0cd00cd..657396c 100644
 --- a/src/Powercord/plugins/pc-moduleManager/index.js
 +++ b/src/Powercord/plugins/pc-moduleManager/index.js
-@@ -5,7 +5,7 @@ const { PopoutWindow } = require('powercord/components');
+@@ -5,8 +5,8 @@ const { PopoutWindow } = require('powercord/components');
  const { inject, uninject } = require('powercord/injector');
  const { findInReactTree, forceUpdateElement } = require('powercord/util');
  const { Plugin } = require('powercord/entities');
