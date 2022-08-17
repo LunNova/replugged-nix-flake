@@ -14,7 +14,7 @@
 
   # Disable update checking
   postPatch = ''
-    substituteInPlace src/Powercord/plugins/pc-updater/index.js --replace "'paused', false" "'paused', true"
+    substituteInPlace src/Powercord/coremods/updater/index.js --replace "'paused', false" "'paused', true"
     substituteInPlace src/Powercord/index.js --replace "this.gitInfos = await this.pluginManager.get('pc-updater').getGitInfos();" " "
   '';
 
