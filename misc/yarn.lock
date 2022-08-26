@@ -1030,9 +1030,9 @@ camelcase@^6.0.0:
   integrity sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==
 
 caniuse-lite@^1.0.30001370:
-  version "1.0.30001382"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001382.tgz#4d37f0d0b6fffb826c8e5e1c0f4bf8ce592db949"
-  integrity sha512-2rtJwDmSZ716Pxm1wCtbPvHtbDWAreTPxXbkc5RkKglow3Ig/4GNGazDI9/BVnXbG/wnv6r3B5FEbkfg9OcTGg==
+  version "1.0.30001383"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001383.tgz#aecf317ccd940690725ae3ae4f28293c5fb8050e"
+  integrity sha512-swMpEoTp5vDoGBZsYZX7L7nXHe6dsHxi9o6/LKf/f0LukVtnrxly5GVb/fWdCDTqi/yw6Km6tiJ0pmBacm0gbg==
 
 capture-exit@^2.0.0:
   version "2.0.0"
@@ -1389,9 +1389,9 @@ domexception@^2.0.1:
     webidl-conversions "^5.0.0"
 
 electron-to-chromium@^1.4.202:
-  version "1.4.229"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.229.tgz#506107e357a59e3241f69cdd1a179626164ddd86"
-  integrity sha512-kdye32s/padLGpiLzhrMraBBs/M5hDspB8PCdCP6L11AJ6dw3Gg3xdvT4b4pqWaW5tc5oAwCfKCS+PAsZM3ipw==
+  version "1.4.230"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.230.tgz#666909fdf5765acb1348b69752ee9955dc1664b7"
+  integrity sha512-3pwjAK0qHSDN9+YAF4fJknsSruP7mpjdWzUSruIJD/JCH77pEh0SorEyb3xVaKkfwk2tzjOt2D8scJ0KAdfXLA==
 
 emittery@^0.7.1:
   version "0.7.2"
@@ -4351,9 +4351,9 @@ to-regex@^3.0.1, to-regex@^3.0.2:
     safe-regex "^1.1.0"
 
 tough-cookie@^4.0.0:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/tough-cookie/-/tough-cookie-4.1.1.tgz#3600960f1e1c83545f130ac80043b9de8e5d488b"
-  integrity sha512-Ns3k8QxkEzIfLZbRwLOrMPDqRa1BEAl4BzNNAOYY4BhBmEkf+HvP467F4NrD9loK3NcYflWOpUH3LJg0ehq/rQ==
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/tough-cookie/-/tough-cookie-4.1.2.tgz#e53e84b85f24e0b65dd526f46628db6c85f6b874"
+  integrity sha512-G9fqXWoYFZgTc2z8Q5zaHy/vJMjm+WV0AkAeHxVCQiEB1b+dGvWzFW6QV07cY5jQ5gRkeid2qIkzkxUnmoQZUQ==
   dependencies:
     psl "^1.1.33"
     punycode "^2.1.1"
