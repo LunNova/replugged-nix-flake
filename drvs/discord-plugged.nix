@@ -1,5 +1,6 @@
 { symlinkJoin
 , discord-canary
+, discord ? discord-canary
 , replugged
 , makeBinaryWrapper
 , writeShellScript
@@ -12,7 +13,7 @@ let
 in
 symlinkJoin {
   name = "discord-plugged";
-  paths = [ discord-canary.out ];
+  paths = [ discord.out ];
 
   nativeBuildInputs = [ makeBinaryWrapper ];
 
@@ -30,18 +31,18 @@ symlinkJoin {
         oldExe=$1; shift
         oldWrapperArgs=("$@")
       }
-      eval "parseMakeCWrapperCall ''${wrapperCmd//"${discord-canary.out}"/"$out"}"
+      eval "parseMakeCWrapperCall ''${wrapperCmd//"${discord.out}"/"$out"}"
       # Binary wrapper
       makeWrapper $oldExe $out/opt/DiscordCanary/DiscordCanary "''${oldWrapperArgs[@]}" --add-flags "${extraElectronArgs}"
     else
       # Normal wrapper
       substituteInPlace $out/opt/DiscordCanary/DiscordCanary \
-      --replace '${discord-canary.out}' "$out" \
+      --replace '${discord.out}' "$out" \
       --replace '"$@"' '${extraElectronArgs} "$@"'
     fi
 
-    substituteInPlace $out/opt/DiscordCanary/DiscordCanary --replace '${discord-canary.out}' "$out"
+    substituteInPlace $out/opt/DiscordCanary/DiscordCanary --replace '${discord.out}' "$out"
   '';
 
-  meta.mainProgram = if (discord-canary.meta ? mainProgram) then discord-canary.meta.mainProgram else null;
+  meta.mainProgram = if (discord.meta ? mainProgram) then discord.meta.mainProgram else null;
 }
