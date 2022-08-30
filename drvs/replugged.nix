@@ -21,9 +21,9 @@ stdenvNoCC.mkDerivation {
 
       map = n: lib.concatMapStringsSep "\n"
         (e: ''
-          chmod 755 $out/src/Powercord/${n}
-          cp -a ${e.outPath} $out/src/Powercord/${n}/${e.name}
-          chmod -R u+w $out/src/Powercord/${n}/${e.name}
+          chmod 755 $out/${n}
+          cp -a ${e.outPath} $out/${n}/${e.name}
+          chmod -R u+w $out/${n}/${e.name}
         '');
 
       mappedPlugins = map "plugins" (fromDrvs withPlugins);
