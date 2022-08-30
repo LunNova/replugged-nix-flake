@@ -1,6 +1,6 @@
 { symlinkJoin
-, discord-canary
-, discord ? discord-canary
+  # This should usually be discord-canary but other versions can work
+, discord
 , replugged
 , makeBinaryWrapper
 , writeShellScript
