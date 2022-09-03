@@ -16,6 +16,10 @@
   postPatch = ''
     substituteInPlace src/Powercord/coremods/updater/index.js --replace "'paused', false" "'paused', true"
     substituteInPlace src/Powercord/index.js --replace "this.gitInfos = await this.pluginManager.get('pc-updater').getGitInfos();" " "
+
+    # Not relevant, we keep quick CSS in a custom location
+    rm src/Powercord/migrations/20220816-move-quick-css.js
+    rm src/Powercord/migrations/20220901-move-quick-css.js
   '';
 
   installPhase = ''

@@ -15,7 +15,7 @@ index 0cd00cd..657396c 100644
 @@ -48,6 +48,6 @@ module.exports = class ModuleManager extends Plugin {
  
  let _quickCSS = '';
--const _quickCSSFile = join(__dirname, 'quickcss.css');
+-const _quickCSSFile = join(__dirname, '..', '..', '..', '..', 'settings', 'quickcss', 'main.css');
 +const _quickCSSFile = join(SETTINGS_FOLDER, 'quickcss.css');
  let _quickCSSElement;
  
