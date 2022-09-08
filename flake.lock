@@ -19,11 +19,11 @@
     "replugged": {
       "flake": false,
       "locked": {
-        "lastModified": 1662507712,
-        "narHash": "sha256-qLzQ8Pt/kRGGyWR0iwYikcWs1ZfrDgdBnwfsR8neoO8=",
+        "lastModified": 1662585197,
+        "narHash": "sha256-7ntpzMwRvuw4Bp4+IN+jPWUxS9JC0+tzelTFzB4TwIE=",
         "owner": "replugged-org",
         "repo": "replugged",
-        "rev": "91df0ce4322d05c5c5eb61aa028668a1d16c7ed3",
+        "rev": "d27884074144dfac919dc6e84efbd2ae0a712a70",
         "type": "github"
       },
       "original": {
