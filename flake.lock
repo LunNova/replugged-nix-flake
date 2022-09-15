@@ -2,11 +2,11 @@
   "nodes": {
     "nixpkgs": {
       "locked": {
-        "lastModified": 1662996720,
-        "narHash": "sha256-XvLQ3SuXnDMJMpM1sv1ifPjBuRytiDYhB12H/BNTjgY=",
+        "lastModified": 1663087123,
+        "narHash": "sha256-cNIRkF/J4mRxDtNYw+9/fBNq/NOA2nCuPOa3EdIyeDs=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "5f326e2a403e1cebaec378e72ceaf5725983376d",
+        "rev": "9608ace7009ce5bc3aeb940095e01553e635cbc7",
         "type": "github"
       },
       "original": {
@@ -19,11 +19,11 @@
     "replugged": {
       "flake": false,
       "locked": {
-        "lastModified": 1663070070,
-        "narHash": "sha256-bWa1OuxZXP/TE8QOHQr+jkmu6JU+PxuxrIukbwqmeJ4=",
+        "lastModified": 1663197199,
+        "narHash": "sha256-mGyX24mleUzbEVCmhu0dJOTnj82N3qT3OaPHtd321Oc=",
         "owner": "replugged-org",
         "repo": "replugged",
-        "rev": "1eacddef84d39e733adf5f38aa204268415cb674",
+        "rev": "4d5000b63a329d4dfa2e1ede92ab2b87350cf861",
         "type": "github"
       },
       "original": {
