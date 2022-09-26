@@ -1,7 +1,15 @@
 # replugged-nix-flake
-A flake with derivations for [replugged](https://replugged.dev) and discord-canary with replugged set up.
+A flake with derivations for [replugged](https://replugged.dev) and discord stable with replugged set up.
 
 Based on [LavaDesu's powercord-overlay](https://github.com/LavaDesu/powercord-overlay).
+
+## Updates
+
+Every day github actions updates this flake, and only pushes if the build still works.
+
+#### 2022-09-26
+
+* Changed default discord package to discord stable, as replugged is not currently working on canary and replugged does not recommend canary. Canary used to be required by powercord.
 
 ## Installation
 ### With flakes
@@ -87,7 +95,8 @@ If you're using flakes, you can instead use inputs to fetch them
     ...
   };
   discord = pkgs.discord-canary;
-  
+  # Discord binaries/folders have a different suffix in different packages
+  discordPathSuffix = "Canary";
 })
 ```
 
