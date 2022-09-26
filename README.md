@@ -76,6 +76,21 @@ If you're using flakes, you can instead use inputs to fetch them
 })
 ```
 
+## Use a different discord version
+```
+(replugged-nix-flake.lib.makeDiscordPlugged {
+  inherit pkgs;
+  plugins = {
+    ...
+  };
+  themes = {
+    ...
+  };
+  discord = pkgs.discord-canary;
+  
+})
+```
+
 ## Additional notes
 - The updater should be disabled, it doesn't work for obvious reasons :)
   - I tried to disable it by patching but that might not work

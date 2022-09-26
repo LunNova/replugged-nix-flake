@@ -1,10 +1,11 @@
 { symlinkJoin
-  # This should usually be discord-canary but other versions can work
+  # This should usually be discord-${discordPathSuffix} but other versions can work
 , discord
 , replugged
 , makeBinaryWrapper
 , writeShellScript
 , extraElectronArgs ? ""
+, discordPathSuffix ? ""
 }:
 let
   extractCmd = makeBinaryWrapper.extractCmd or (writeShellScript "extract-binary-wrapper-cmd" ''
@@ -18,13 +19,13 @@ symlinkJoin {
   nativeBuildInputs = [ makeBinaryWrapper ];
 
   postBuild = ''
-    cp -r '${../plugs}' $out/opt/DiscordCanary/resources/app
-    substituteInPlace $out/opt/DiscordCanary/resources/app/index.js --replace 'REPLUGGED_SRC' '${replugged}'
+    cp -r '${../plugs}' $out/opt/Discord${discordPathSuffix}/resources/app
+    substituteInPlace $out/opt/Discord${discordPathSuffix}/resources/app/index.js --replace 'REPLUGGED_SRC' '${replugged}'
 
-    cp -a --remove-destination $(readlink "$out/opt/DiscordCanary/.DiscordCanary-wrapped") "$out/opt/DiscordCanary/.DiscordCanary-wrapped"
-    cp -a --remove-destination $(readlink "$out/opt/DiscordCanary/DiscordCanary") "$out/opt/DiscordCanary/DiscordCanary"
+    cp -a --remove-destination $(readlink "$out/opt/Discord${discordPathSuffix}/.Discord${discordPathSuffix}-wrapped") "$out/opt/Discord${discordPathSuffix}/.Discord${discordPathSuffix}-wrapped"
+    cp -a --remove-destination $(readlink "$out/opt/Discord${discordPathSuffix}/Discord${discordPathSuffix}") "$out/opt/Discord${discordPathSuffix}/Discord${discordPathSuffix}"
 
-    if grep '\0' $out/opt/DiscordCanary/DiscordCanary && wrapperCmd=$(${extractCmd} $out/opt/DiscordCanary/DiscordCanary) && [[ $wrapperCmd ]]; then
+    if grep '\0' $out/opt/Discord${discordPathSuffix}/Discord${discordPathSuffix} && wrapperCmd=$(${extractCmd} $out/opt/Discord${discordPathSuffix}/Discord${discordPathSuffix}) && [[ $wrapperCmd ]]; then
       # Binary wrapper
       parseMakeCWrapperCall() {
         shift # makeCWrapper
@@ -33,15 +34,15 @@ symlinkJoin {
       }
       eval "parseMakeCWrapperCall ''${wrapperCmd//"${discord.out}"/"$out"}"
       # Binary wrapper
-      makeWrapper $oldExe $out/opt/DiscordCanary/DiscordCanary "''${oldWrapperArgs[@]}" --add-flags "${extraElectronArgs}"
+      makeWrapper $oldExe $out/opt/Discord${discordPathSuffix}/Discord${discordPathSuffix} "''${oldWrapperArgs[@]}" --add-flags "${extraElectronArgs}"
     else
       # Normal wrapper
-      substituteInPlace $out/opt/DiscordCanary/DiscordCanary \
+      substituteInPlace $out/opt/Discord${discordPathSuffix}/Discord${discordPathSuffix} \
       --replace '${discord.out}' "$out" \
       --replace '"$@"' '${extraElectronArgs} "$@"'
     fi
 
-    substituteInPlace $out/opt/DiscordCanary/DiscordCanary --replace '${discord.out}' "$out"
+    substituteInPlace $out/opt/Discord${discordPathSuffix}/Discord${discordPathSuffix} --replace '${discord.out}' "$out"
   '';
 
   meta.mainProgram = if (discord.meta ? mainProgram) then discord.meta.mainProgram else null;
