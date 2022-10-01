@@ -7,6 +7,11 @@ Based on [LavaDesu's powercord-overlay](https://github.com/LavaDesu/powercord-ov
 
 Every day github actions updates this flake, and only pushes if the build still works.
 
+#### 2022-10-1
+
+* Replugged is currently broken. See [https://github.com/LunNova/replugged-nix-flake/issues/6](https://github.com/LunNova/replugged-nix-flake/issues/6).
+* Added `withOpenAsar` option to config which uses [openasar.dev](https://openasar.dev/). Allows for some theming, no declarative config.
+
 #### 2022-09-26
 
 * Changed default discord package to discord stable, as replugged is not currently working on canary and replugged does not recommend canary. Canary used to be required by powercord.
@@ -42,6 +47,15 @@ in
     })
   ];
 }
+```
+
+### Using openasar
+
+```nix
+(replugged-nix-flake.lib.makeDiscordPlugged {
+  inherit pkgs;
+  withOpenAsar = true;
+});
 ```
 
 ### Plugins/Themes
