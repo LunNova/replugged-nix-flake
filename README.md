@@ -29,7 +29,7 @@ Every day github actions updates this flake, and only pushes if the build still 
 ### Without flakes
 ```nix
 let
-  replugged-nix-flake = import (builtins.fetchTarball "https://github.com/LunNova/replugged-nix-flak/archive/main.tar.gz");
+  replugged-nix-flake = import (builtins.fetchTarball "https://github.com/LunNova/replugged-nix-flake/archive/main.tar.gz");
 in
 ...
 ```
